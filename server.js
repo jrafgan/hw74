@@ -1,12 +1,10 @@
-const products = require('./app/products');
-const db = require('./differentExamples/fileDb');
+const express = require('express');
+const messages = require('./messages');
 const app = express();
 app.use(express.json());
-const port = 8002 ;
+const port = 8000 ;
 
-db.init();
-
-app.use('/products', products);
+app.use('/messages', messages);
 
 app.listen(port, ()=>{
     console.log(`Server started on ${port} port!`);
